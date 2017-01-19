@@ -1,0 +1,45 @@
+// 这种注释在编译成CSS文件后会被删除
+/* 这种注释则会保留到CSS文件中 */
+
+// 定义变量
+@mainColor: #e92322;
+
+// 使用变量
+body {
+	background-color: @mainColor;
+}
+
+// Mixins
+.bordered {
+	border: 1px solid @mainColor;
+	-webkit-border: 1px solid @mainColor;
+	-moz-border: 1px solid @mainColor;
+}
+
+html {
+	.bordered;
+}
+
+// 嵌套元素 &代表当前元素
+.box{
+	width: 100px;
+	height: 100px;
+
+	>a{
+		text-decoration: none;
+		&:hover{
+			color: @mainColor;
+		}
+	}
+	
+}
+
+// 定义一个类似方法的东西，可以.fn(#fff)或者.fn使用，前者为指定了属性值，后者使用定义时的默认值
+.fn(@color: #ccc){
+	background-color: @color;
+}
+
+.wrapper{
+	.fn(#fff);
+	.fn;
+}

@@ -1,0 +1,28 @@
+/* 这种注释则会保留到CSS文件中 */
+body {
+  background-color: #e92322;
+}
+.bordered {
+  border: 1px solid #e92322;
+  -webkit-border: 1px solid #e92322;
+  -moz-border: 1px solid #e92322;
+}
+html {
+  border: 1px solid #e92322;
+  -webkit-border: 1px solid #e92322;
+  -moz-border: 1px solid #e92322;
+}
+.box {
+  width: 100px;
+  height: 100px;
+}
+.box > a {
+  text-decoration: none;
+}
+.box > a:hover {
+  color: #e92322;
+}
+.wrapper {
+  background-color: #fff;
+  background-color: #ccc;
+}
